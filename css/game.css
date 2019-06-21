@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Crayon';
+    src: local('Crayon'), url('../fonts/DK Crayon Crumble.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TW Cen MT';
+    src: local('TW'), url('../fonts/TCCEB.TTF') format('truetype');
+}
+
+body {
+    background-color: #CCC;
+}
+
+#canvas {
+    background-color: #FFF;
+    position: absolute;
+}
+
+#debug {
+    position: absolute;
+}
