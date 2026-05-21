@@ -1,35 +1,29 @@
-# Graduate Day at Cisco, May 2013
+# Hungry Birds
 
-I designed a game - that I could call Hungry Birds - and the exercise is to implement the Artificial Intelligence
-of the players.
-The aim of the game is simple: get as many points as possible by collecting objects (food or drinks).
-But you have opponents! So how will you do it? By being quicker than the others? Or choosing carefully in which order
-you will collect the objects? Or by stealing from the opponents maybe?
+A 2D physics game where players compete to collect as many food items as possible. Originally built in 2013, now modernised with TypeScript, Vite, and pnpm.
 
---------------
- HOW TO START
---------------
+## How to play
 
-1. Run Chrome (your favourite browser) and check that you can load the following URL: http://localhost/
-   If it doesn't work, check that WAMP is running.
-   If you can see the game: Open the console (Ctrl-Shift-I) to see if there are any errors. You should see: "Player 1 is ready" in the console
-   Press P to start the game. P pauses and restarts the game. But the player is not moving, nothing is happening yet.
-2. Rename PlayerTemplate.js PlayerN.js (where N is your player number between 1 and 4)
-3. Edit your PlayerN.js file to set the class name and player number (look for the TODOs)
-4. Edit addPlayers.js to call the appropriate class name
-5. Edit index.html to load the appropriate PlayerN.js file
-6. Check you can still load the game correctly in Chrome: http://localhost/ (check the console for errors)
-7. Start implementing the player's main loop! i.e. moveMyPlayer() inside your PlayerN.js file
+Each player controls a circular bird. Collect food and drinks to score points. You can also steal items from opponents. Press **P** to pause and unpause. Reload the page to restart.
 
---------------
+## Setup
 
-A few words about the technologies used to create this game:
-It's implemented in HTML5/javascript and uses the following libraries:
-- CreateJS - the game engine
-- box2d - a physics engine
+```sh
+pnpm install
+pnpm dev
+```
 
-Any feedback (good or bad) will be appreciated.
+Then open `http://localhost:5173`.
 
-Good luck!
+## Adding players
 
-Olivier Frebourg <ofrebour@cisco.com>, Cisco - 2013
+Each player is defined in `src/players/PlayerN.ts`. Copy `PlayerTemplate.ts` as a starting point, set the player number, and implement `moveMyPlayer()` — that's the main loop called every tick.
+
+Players are registered in `src/addPlayers.ts`.
+
+## Stack
+
+- [CreateJS](https://createjs.com) — rendering (loaded as a global script, no ESM export)
+- [Box2dWeb](https://github.com/hecht-software/box2dweb) — 2D physics
+- [ndgmr Collision](https://github.com/nicktindall/ndgmr.Collision) — pixel-perfect collision detection
+- Vite, TypeScript, Biome
