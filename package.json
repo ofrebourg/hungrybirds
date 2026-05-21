@@ -1,0 +1,23 @@
+{
+	"name": "hungrybirds",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"lint": "biome lint src",
+		"format": "biome format src --write",
+		"check": "biome check src"
+	},
+	"dependencies": {
+		"createjs": "^1.0.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"typescript": "^5.7.3",
+		"vite": "^6.3.5"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": ["@biomejs/biome", "esbuild"]
+	}
+}
